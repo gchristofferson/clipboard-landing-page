@@ -439,6 +439,7 @@ p {
     padding: 0 118px;
     margin-bottom: 170px;
     justify-content: center;
+    column-gap: 100px;
 }
 
 .clients__content > * {
@@ -476,6 +477,16 @@ p {
     margin-bottom: 0;
 }
 
+@media (min-width: 48em) {
+    .clients__content {
+        margin-bottom: 161px;
+    }
+
+    .clients__content > * {
+        margin-bottom: 0;
+    }
+}
+
 
 /* cta section */
 
@@ -485,6 +496,12 @@ p {
 
 .cta__text {
     margin-bottom: 46px;
+}
+
+@media (min-width: 48em) {
+    .cta__text {
+        margin-bottom: 48px;
+    }
 }
 
 /* footer section */
