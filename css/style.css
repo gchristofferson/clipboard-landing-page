@@ -1,0 +1,450 @@
+/* ================================
+CSS RESETS AND DEFAULTS
+================================ */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    /* Remove default margin and padding */
+    margin: 0;
+    padding: 0;
+}
+
+/* Set core root defaults */
+html:focus-within {
+    scroll-behavior: smooth;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+    text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+    max-width: 100%;
+    display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+    html:focus-within {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+
+
+
+/* ================================
+UTILITIES
+================================ */
+
+.row {
+    padding: 0 32px;
+    margin: 0 auto;
+}
+
+.flex {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+
+
+
+
+/* ================================
+COLORS
+================================ */
+
+:root {
+    /* Primary */
+    --strong-cyan: hsl(171, 66%, 44%);
+    --light-blue: hsl(233, 100%, 69%);
+
+    /* Neutral */
+    --dark-grayish-blue: hsl(210, 10%, 33%);
+    --grayish-blue: hsl(201, 11%, 66%);
+}
+
+
+
+
+/* ================================
+TYPOGRAPHY
+================================ */
+
+/* Set core body defaults also */
+body {
+    min-height: 100vh;
+    text-rendering: optimizeSpeed;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-weight: 400;
+    font-size: 1rem;
+    line-height: 1.625;
+    color: var(--grayish-blue);
+    text-align: center;
+}
+
+h1,
+h2,
+h3 {
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--dark-grayish-blue);
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+    letter-spacing: 0.47px;
+}
+
+h3 {
+    font-size: 1.5rem;
+    letter-spacing: 0.39px;
+}
+
+.link-list__item {
+    font-size: 1.125rem;
+    line-height: 1.67;
+    letter-spacing: 0.135px;
+    text-decoration: none;
+    color: var(--dark-grayish-blue);
+}
+
+@media (min-width: 48em) {
+
+    body {
+        font-size: 1.25rem;
+        line-height: 1.5;
+    }
+
+    h1 {
+        font-size: 2.875rem;
+        line-height: 1.24;
+    }
+}
+
+
+
+/* ================================
+BUTTONS
+================================ */
+
+.btn-wrapper {
+    max-width: 311px;
+    margin: 0 auto 160px auto;
+}
+
+.btn {
+    display: block;
+    background-color: var(--strong-cyan);
+    font-weight: 600;
+    line-height: 1.67;
+    letter-spacing: 0.5px;
+    color: #fff;
+    text-decoration: none;
+    padding: 14px 50px;
+    box-shadow: 0 10px 20px
+        rgba(137, 229, 199, 0.503305),
+        inset 0 -3px 0 rgba(0, 0, 0, 0.151333);
+    border-radius: 28px;
+    transition: opacity 250ms;
+    flex: 0 0 100%;
+}
+
+.btn:hover, .btn:focus {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.btn--secondary {
+    background-color: var(--light-blue);
+}
+
+.btn + .btn {
+    margin-top: 24px;
+}
+
+@media (min-width: 48em) {
+    .btn-wrapper {
+        max-width: 470px;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 150px;
+    }
+
+    .btn {
+        font-size: 1rem;
+        flex: 0 0 227px;
+        min-width: 227px;
+        padding: 13px 36px;
+    }
+
+    .btn + .btn {
+        margin-top: 0;
+    }
+}
+
+
+
+
+/* ================================
+GENERAL LAYOUT
+================================ */
+
+.body {
+    background-image: url("../images/bg-header-mobile.png");
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: 100%;
+    overflow-x: hidden;
+}
+
+@media (min-width: 48em) {
+    .body {
+        background-image: url("../images/bg-header-desktop.png");
+    }
+}
+
+
+
+/* Header section */
+
+.header {
+    max-width: 778px;
+}
+
+.logo {
+    margin: 123px auto 64px auto;
+}
+
+.title {
+    margin-bottom: 16px;
+}
+
+.header__text {
+    margin-bottom: 48px;
+}
+
+@media (min-width: 48px) {
+    .logo {
+        margin: 128px auto 56px auto;
+    }
+}
+
+
+
+/* Highlight sections */
+
+.highlight + .highlight {
+    margin-top: 186px;
+}
+
+[aria-labelledby="highlight-2"] {
+    margin-bottom: 130px;
+}
+
+.highlight__text {
+    margin-bottom: 65px;
+}
+
+.highlight__img {
+    margin-bottom: 56px;
+}
+
+.title--subtitle--sm {
+    margin-bottom: 10px;
+}
+
+.highlight {
+    margin-bottom: 48px;
+}
+
+
+/* Features section */
+
+.features {
+    margin-bottom: 130px;
+}
+
+.features__text {
+    margin-bottom: 90px;
+}
+
+.features__box {
+    margin-bottom: 56px;
+}
+
+.features__box .title--subtitle--sm {
+    margin-bottom: 18px;
+}
+
+[class^="features__box__icon-"] {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    margin: 0 auto 40px auto;
+}
+
+.features__box__icon-1 {
+    background-image: url("../images/icon-blacklist.svg");
+    width: 44px;
+    height: 40px;
+}
+
+.features__box__icon-2 {
+    background-image: url("../images/icon-text.svg");
+    width: 36px;
+    height: 32px;
+}
+
+.features__box__icon-3 {
+    background-image: url("../images/icon-preview.svg");
+    width: 50px;
+    height: 32px;
+}
+
+
+/* Clients section */
+
+.clients__content {
+    padding: 0 118px;
+    margin-bottom: 170px;
+    justify-content: center;
+}
+
+.clients__content > * {
+    margin-bottom: 59px;
+}
+
+.clients__img--google {
+    flex: 0 0 165px;
+    min-width: 139px;
+    max-height: 49px;
+}
+
+.clients__img--IBM {
+    flex: 0 0 135px ;
+    min-width:  115px;
+    max-height: 52px;
+}
+
+.clients__img--microsoft {
+    flex: 0 0 160px ;
+    min-width:  135px;
+    max-height: 32px;
+}
+
+.clients__img--hp {
+    flex: 0 0 135px ;
+    min-width:  113px;
+    max-height: 57px;
+}
+
+.clients__img--vg {
+    flex: 0 0 125px ;
+    min-width:  105px;
+    max-height: 30px;
+    margin-bottom: 0;
+}
+
+
+/* cta section */
+
+.cta {
+    margin-bottom: 170px;
+}
+
+.cta__text {
+    margin-bottom: 46px;
+}
+
+/* footer section */
+
+.footer {
+    background-color: #F5F7F7;
+    padding-bottom: 51px;
+}
+
+.footer__content > * {
+    flex: 0 0 100%;
+}
+
+.logo--sm {
+    max-width: 55px;
+    margin-bottom: 50px;
+}
+
+.link-list__wrapper {
+    margin-bottom: 50px;
+}
+
+.link-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.link-list__item {
+    margin-bottom: 20px;
+}
+
+.social {
+    max-width: 160px;
+    justify-content: space-between;
+    margin: 0 auto;
+}
+
+.social__icon {
+    width: 24px;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.social__icon--facebook {
+    background-image: url("../images/icon-facebook.svg");
+}
+
+.social__icon--twitter {
+    background-image: url("../images/icon-twitter.svg");
+}
+
+.social__icon--instagram {
+    background-image: url("../images/icon-instagram.svg");
+}
+
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
