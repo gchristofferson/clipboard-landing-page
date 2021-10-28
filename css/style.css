@@ -585,7 +585,7 @@ p {
 
 @media (min-width: 48em) {
     .footer {
-        padding: 39px 165px;
+        padding: 39px 165px 0 165px;
     }
 
     .logo--sm,
